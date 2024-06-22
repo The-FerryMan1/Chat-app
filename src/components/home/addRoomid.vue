@@ -9,8 +9,6 @@ const roomHandler = ()=>{
 
     if (roomID.value){
         sendRoom.RoomSetter(roomID.value.trim())
-    }else{
-        console.log("empty fields")
     }
     
 }

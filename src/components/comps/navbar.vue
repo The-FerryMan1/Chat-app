@@ -3,7 +3,7 @@ import { useAuthStore } from '@/stores/auth';
 
 const auth = useAuthStore()
 
-console.log(auth.currentUser)
+
 </script>
 
 <template>

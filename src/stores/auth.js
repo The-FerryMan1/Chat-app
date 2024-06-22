@@ -16,8 +16,6 @@ export const useAuthStore = defineStore('auth', ()=>{
             if(user){
                 currentUser.value = user.email
 
-            }else{
-                console.log('did not log in')
             }
         })
         return ()=>pepe()

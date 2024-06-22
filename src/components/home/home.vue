@@ -2,6 +2,7 @@
 import { onBeforeMount, onMounted,ref } from 'vue';
 import { useAuthStore } from '@/stores/auth';
 import { useSendmessage } from '@/stores/sendMessage';
+import chat from './chat.vue';
 const mensahe = useSendmessage()
 const auth = useAuthStore()
 
@@ -9,7 +10,6 @@ const auth = useAuthStore()
 
 onBeforeMount(async()=>{
     auth.GetUser();
-    console.log(auth.currentUser)
     mensahe.Displaymess();
     
 })
@@ -28,21 +28,19 @@ const handleLogout = ()=>{
 </script>
 
 <template>
-    <div class="w-full h-full grid grid-cols-1 place-items-center bg-black">
-        <div class="w-1/2 h-full bg-white p-4 flex flex-col justify-between items-center">
+    <div class="w-full h-full grid grid-cols-1 place-items-center bg-black overflow-hidden">
+        <div class="w-1/2 h-full bg-white p-4 flex flex-col justify-between items-center overflow-hidden">
             <div class="self-start bg-pink-600 p-4 rounded-lg border-b-2 w-full flex justify-between text-white">
                 <h2>Room ID: <span class="font-semibold">{{ mensahe.rum }}</span></h2>
                 <button @click="handleLogout" class="px-3 py-2 bg-white text-pink-600 rounded-lg">Logout</button>
             </div>
 
 
-            <section class="flex flex-col justify-start items-end h-full w-full  p-3 my-3 bg-white overflow-y-auto">
-                <div v-show="mensahe.existingMess && mensahe.existingMess.length" class="flex flex-col gap-5 w-full ">
+            <section class="flex flex-col justify-start items-end h-full w-full  p-3 my-3 bg-white  overflow-y-auto">
+                <div v-show="mensahe.existingMess && mensahe.existingMess.length" class="flex flex-col gap-5 w-full">
                     <div v-for="mens in mensahe.existingMess" :key="mens.id" class=""
-                        :class="mens.email == auth.currentUser ? 'flex flex-col self-end justify-center items-center bg-pink-600 rounded-[15px_15px_0px_15px] px-4 text-white' : 'flex flex-col self-start justify-center items-center bg-pink-600 rounded-[15px_15px_0px_15px] px-4 text-white'">
-                        <p class="text-lg">{{ mens.content }}</p>
-                        <p class="text-[12px] text-[#ccc] self-end">{{mens.email}}</p>
-                        <p>{{ mens.createdAt.nanoseconds }}</p>
+                        :class="mens.email == auth.currentUser ? 'flex flex-col h-full self-end justify-center items-center bg-pink-600 rounded-[15px_15px_0px_15px] px-4 text-white' : 'flex flex-col self-start justify-center items-center bg-pink-600 rounded-[15px_15px_0px_15px] px-4 text-white'">
+                        <chat :mens="mens" />
                     </div>
 
                 </div>
