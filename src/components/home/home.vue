@@ -28,8 +28,8 @@ const handleLogout = ()=>{
 </script>
 
 <template>
-    <div class="w-full h-full grid grid-cols-1 place-items-center bg-black overflow-hidden">
-        <div class="md:w-1/2 w-full h-full bg-white p-4 flex flex-col justify-between items-center overflow-hidden">
+    <div class="w-full h-dvh grid grid-cols-1 place-items-center bg-black overflow-hidden">
+        <div class="md:w-1/2 w-full h-dvh bg-white p-4 flex flex-col justify-between items-center overflow-hidden">
             <div class="self-start bg-pink-600 p-4 rounded-lg border-b-2 w-full flex justify-between text-white">
                 <h2>Room ID: <span class="font-semibold">{{ mensahe.rum }}</span></h2>
                 <button @click="handleLogout" class="px-3 py-2 bg-white text-pink-600 rounded-lg">Logout</button>
