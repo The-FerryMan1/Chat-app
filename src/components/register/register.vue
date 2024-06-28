@@ -15,9 +15,9 @@ const sumbitHandler = ()=>{
 </script>
 
 <template>
-    <form class="w-[60%] mx-auto shadow-lg p-5 gap-4 rounded-lg" @submit.prevent="sumbitHandler">
+    <form class="sm:w-[60%] w-full mx-auto shadow-lg p-5 gap-4 rounded-lg" @submit.prevent="sumbitHandler">
         <div class="mb-10 ">
-            <h2 class="text-3xl font-semibold tracking-wide text-pink-600">Sign in to get started!</h2>
+            <h2 class="text-3xl font-semibold tracking-wide text-pink-600">Sign up to get started!</h2>
         </div>
         <div class="mb-5">
             <label for="email" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Email</label>

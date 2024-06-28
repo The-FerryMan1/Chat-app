@@ -18,7 +18,7 @@ const loginHandler = () =>{
 <template>
 
 
-    <form class="w-[60%] mx-auto shadow-lg p-5 gap-4 rounded-lg" @submit.prevent="loginHandler">
+    <form class="sm:w-[60%] w-full mx-auto shadow-lg p-5 gap-4 rounded-lg" @submit.prevent="loginHandler">
         <div class="mb-10 ">
             <h2 class="text-3xl font-semibold tracking-wide text-pink-600">Welcome back!</h2>
         </div>
