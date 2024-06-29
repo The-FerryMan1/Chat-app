@@ -39,7 +39,7 @@ const handleLogout = ()=>{
             <section class="flex flex-col justify-start items-end h-full w-full  p-3 my-3 bg-white  overflow-y-auto">
                 <div v-show="mensahe.existingMess && mensahe.existingMess.length" class="flex flex-col gap-5 w-full">
                     <div v-for="mens in mensahe.existingMess" :key="mens.id" class=""
-                        :class="mens.email == auth.currentUser ? 'flex flex-col h-full self-end justify-center items-center bg-pink-600 rounded-[15px_15px_0px_15px] px-4 text-white' : 'flex flex-col self-start justify-center items-center bg-pink-600 rounded-[15px_15px_0px_15px] px-4 text-white'">
+                        :class="mens.email == auth.currentUser ? 'flex flex-col h-full self-end w-1/2 justify-center items-center bg-pink-600 rounded-[15px_15px_0px_15px]  px-4 text-white' : ' w-1/2 flex flex-col self-start justify-center items-center bg-pink-600 rounded-[15px_15px_15px_0px] px-4 text-white'">
                         <chat :mens="mens" />
                     </div>
 
